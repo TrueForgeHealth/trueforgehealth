@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fbf7f0;
+  color: #1c1917;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+
+.text-metallic {
+  background: linear-gradient(115deg, #57534e 0%, #ffffff 20%, #d6d3d1 38%, #fafafa 55%, #a8a29e 72%, #ffffff 85%, #57534e 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+.text-metallic-gold {
+  background: linear-gradient(135deg, #b8895a 0%, #f3d18b 25%, #d4a86a 50%, #fbe7b3 75%, #b8895a 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+  display: inline-block;
+  line-height: 1.15;
+  padding-bottom: 0.1em;
+}
+
+.btn-forge {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-4 bg-forge-500 text-cream-50 font-semibold tracking-wide rounded-full shadow-lg hover:bg-forge-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-4 border border-steel-300 text-steel-800 font-semibold tracking-wide rounded-full hover:border-steel-800 hover:bg-steel-900 hover:text-cream-50 transition-all duration-300;
+}
+.btn-ghost-light {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-4 border border-cream-50/40 text-cream-50 font-semibold tracking-wide rounded-full hover:bg-cream-50 hover:text-steel-900 hover:border-cream-50 transition-all duration-300;
+}
+.btn-dark {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-4 bg-steel-900 text-cream-50 font-semibold tracking-wide rounded-full hover:bg-steel-800 transition-all duration-300 hover:-translate-y-0.5 shadow-lg;
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold tracking-wide rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl text-steel-900;
+  background: linear-gradient(135deg, #b8895a 0%, #f3d18b 30%, #d4a86a 55%, #fbe7b3 80%, #c49a5e 100%);
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+}
+
+.gold-bubble {
+  background: linear-gradient(135deg, rgba(184,137,90,0.18) 0%, rgba(243,209,139,0.10) 50%, rgba(184,137,90,0.18) 100%);
+  border-color: rgba(184,137,90,0.35);
+}
+
+.section { @apply py-20 md:py-28 px-5 md:px-10; }
+.container-tf { @apply max-w-7xl mx-auto; }
+
+.card-lift { @apply transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl; }
+
+.icon-metallic-gold {
+  color: #d4a86a;
+  animation: gold-pulse 3s ease-in-out infinite;
+}
+
+@keyframes gold-pulse {
+  0%, 100% { color: #b8895a; filter: drop-shadow(0 0 2px rgba(243, 209, 139, 0.4)); }
+  25% { color: #f3d18b; filter: drop-shadow(0 0 6px rgba(243, 209, 139, 0.8)); }
+  50% { color: #fbe7b3; filter: drop-shadow(0 0 8px rgba(251, 231, 179, 0.9)); }
+  75% { color: #d4a86a; filter: drop-shadow(0 0 6px rgba(212, 168, 106, 0.7)); }
+}
+
+::selection { background: #b8895a; color: #fbf7f0; }
+
+.prose-legal { @apply text-steel-700 leading-relaxed; }
+.prose-legal h2 { @apply font-display text-2xl md:text-3xl text-steel-900 mt-10 mb-3 first:mt-0; }
+.prose-legal h3 { @apply font-display text-lg md:text-xl text-steel-900 mt-7 mb-2; }
+.prose-legal p { @apply mb-4; }
+.prose-legal ul { @apply list-disc pl-6 mb-4 space-y-1; }
+.prose-legal ol { @apply list-decimal pl-6 mb-4 space-y-1; }
+.prose-legal a { @apply text-forge-600 underline underline-offset-4 hover:text-forge-700; }
+.prose-legal strong { @apply text-steel-900; }
